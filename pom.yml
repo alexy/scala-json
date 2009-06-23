@@ -1,0 +1,34 @@
+name: Stairway Scala JSON Parser
+groupId: com.twitter
+artifactId: scala-json
+packaging: jar
+version: 2.7.x-1.0
+properties:
+  scala.version: 2.7.5
+  java.src.version: 1.6
+  project.build.sourceEncoding: UTF-8
+repositories:
+  - { id: scala-tools.org, name: Scala-Tools Maven2 Repository, url: "http://scala-tools.org/repo-releases" }
+pluginRepositories:
+  - { id: scala-tools.org, name: Scala-Tools Maven2 Repository, url: "http://scala-tools.org/repo-releases" }
+  - { id: twdata-m2-repository, name: twdata.org Maven 2 Repository, url: "http://twdata-m2-repository.googlecode.com/svn/" }
+dependencies:
+  - { groupId: org.scala-lang, artifactId: scala-library, version: "${scala.version}" }
+  - { groupId: org.scala-tools, artifactId: vscaladoc, version: 1.1, optional: true }
+build:
+  sourceDirectory: src/main/scala
+  plugins:
+    - groupId: org.scala-tools
+      artifactId: maven-scala-plugin
+      executions:
+        - goals: [ add-source, compile ]
+      configuration:
+        jvmArgs: [ -Xmx512m, -Xss16m, -Dfile.encoding=UTF-8 ]
+        args: [ -deprecation, -unchecked, -optimise ]
+    - groupId: org.twdata.maven
+      artifactId: maven-yamlpom-plugin
+      executions:
+        - goals: [ sync ]
+reporting:
+  plugins:
+    - { groupId: org.scala-tools, artifactId: maven-scala-plugin }

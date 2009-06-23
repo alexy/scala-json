@@ -3,14 +3,17 @@ package com.twitter.commons
 
 import net.lag.extensions._
 import scala.collection.Map
-import scala.collection.immutable.EmptyMap
+// alexyk added .Map. for EmptyMap in Scala 2.8:
+// import scala.collection.immutable.Map.EmptyMap // 2.8
+import scala.collection.immutable.EmptyMap // 2.7
 import scala.util.parsing.combinator._
 
 
 /**
  * An Exception thrown when parsing or building JSON.
  */
-class JsonException(reason: String) extends Exception(reason)
+ // braver: case
+case class JsonException(reason: String) extends Exception(reason)
 
 
 /**
