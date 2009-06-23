@@ -2,9 +2,9 @@ name: Stairway Scala JSON Parser
 groupId: com.twitter
 artifactId: scala-json
 packaging: jar
-version: 2.7.x-1.0
+version: 1.0
 properties:
-  scala.version: 2.7.5
+  scala.version: 2.8.0-SNAPSHOT
   java.src.version: 1.6
   project.build.sourceEncoding: UTF-8
 repositories:
