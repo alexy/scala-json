@@ -8,7 +8,8 @@ properties:
   java.src.version: 1.6
   project.build.sourceEncoding: UTF-8
 repositories:
-  - { id: scala-tools.org, name: Scala-Tools Maven2 Repository, url: "http://scala-tools.org/repo-releases" }
+  - { id: scala-tools.org, name: Scala-Tools Maven2 Release Repository, url: "http://scala-tools.org/repo-releases" }
+  - { id: snapshots.scala-tools.org, name: Scala-Tools Maven2 Snapshot Repository, url: "http://scala-tools.org/repo-snapshots" }
 pluginRepositories:
   - { id: scala-tools.org, name: Scala-Tools Maven2 Repository, url: "http://scala-tools.org/repo-releases" }
   - { id: twdata-m2-repository, name: twdata.org Maven 2 Repository, url: "http://twdata-m2-repository.googlecode.com/svn/" }
