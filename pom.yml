@@ -1,12 +1,20 @@
 name: Stairway Scala JSON Parser
 groupId: com.twitter
-artifactId: scala-json
+artifactId: "scala-json_${scala.version}"
 packaging: jar
 version: 1.0
 properties:
-  scala.version: 2.8.0-SNAPSHOT
   java.src.version: 1.6
   project.build.sourceEncoding: UTF-8
+profiles:
+  - activation:
+      activeByDefault: true
+    id: Scala-2.7.5
+    properties:
+      scala.version: 2.7.5
+  - id: Scala-2.8.0-SNAPSHOT
+    properties:
+      scala.version: 2.8.0-SNAPSHOT
 repositories:
   - { id: scala-tools.org, name: Scala-Tools Maven2 Release Repository, url: "http://scala-tools.org/repo-releases" }
   - { id: snapshots.scala-tools.org, name: Scala-Tools Maven2 Snapshot Repository, url: "http://scala-tools.org/repo-snapshots" }
@@ -18,6 +26,7 @@ dependencies:
   - { groupId: org.scala-tools, artifactId: vscaladoc, version: 1.1, optional: true }
 build:
   sourceDirectory: src/main/scala
+  directory: "target-${scala.version}"
   plugins:
     - groupId: org.scala-tools
       artifactId: maven-scala-plugin
