@@ -4,8 +4,8 @@ package com.twitter.commons
 import net.lag.extensions._
 import scala.collection.Map
 // alexyk added .Map. for EmptyMap in Scala 2.8:
-// import scala.collection.immutable.Map.EmptyMap // 2.8
-import scala.collection.immutable.EmptyMap // 2.7
+import scala.collection.immutable.Map.EmptyMap // 2.8
+// import scala.collection.immutable.EmptyMap // 2.7
 import scala.util.parsing.combinator._
 
 

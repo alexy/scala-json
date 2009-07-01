@@ -9,12 +9,17 @@ properties:
 profiles:
   - activation:
       activeByDefault: true
+      file:
+        exists: Scala-2.7.5
     id: Scala-2.7.5
     properties:
       scala.version: 2.7.5
   - id: Scala-2.8.0-SNAPSHOT
     properties:
       scala.version: 2.8.0-SNAPSHOT
+    activation:
+      file:
+        exists: Scala-2.8.0-SNAPSHOT
 repositories:
   - { id: scala-tools.org, name: Scala-Tools Maven2 Release Repository, url: "http://scala-tools.org/repo-releases" }
   - { id: snapshots.scala-tools.org, name: Scala-Tools Maven2 Snapshot Repository, url: "http://scala-tools.org/repo-snapshots" }

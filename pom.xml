@@ -15,6 +15,9 @@
         <profile>
             <activation>
                 <activeByDefault>true</activeByDefault>
+                <file>
+                    <exists>Scala-2.7.5</exists>
+                </file>
             </activation>
             <id>Scala-2.7.5</id>
             <properties>
@@ -26,6 +29,11 @@
             <properties>
                 <scala.version>2.8.0-SNAPSHOT</scala.version>
             </properties>
+            <activation>
+                <file>
+                    <exists>Scala-2.8.0-SNAPSHOT</exists>
+                </file>
+            </activation>
         </profile>
     </profiles>
     <repositories>
